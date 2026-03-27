@@ -13,8 +13,7 @@ COPY app app
 COPY devops-demo.zip .
 
 
-RUN unzip devops-demo.zip
-RUN npm install
+
 
 EXPOSE 3000
 
