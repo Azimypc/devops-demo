@@ -1,20 +1,21 @@
 # Base image
-FROM node:18
+FROM node:trixie-slim
 
-# Working directory
+
+
+RUN apt-get update && \
+    apt-get install -y unzip && \
+    rm -rf /var/lib/apt/lists/*
+  
 WORKDIR /app
 
-# Copy files
-COPY package*.json ./
+COPY app app
+COPY devops-demo.zip .
 
-# Install dependencies
+
+RUN unzip devops-demo.zip
 RUN npm install
 
-# Copy rest of files
-COPY . .
-
-# Expose port
 EXPOSE 3000
 
-# Run app
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
