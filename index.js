@@ -4,7 +4,7 @@ const app = express();
 const PORT = 3000;
 
 app.get("/", (req, res) => {
-  res.send("Fuck  DevOps Pamirsoftware IT Solutions 🚀");
+  res.send(" DevOps Pamirsoftware IT Solutions V01 🚀");
   
 });
 
