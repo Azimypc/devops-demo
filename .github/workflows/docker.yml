@@ -24,4 +24,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: mohammadazimi/devops-demo:latest
+        tags: azimypc/devops-demo:latest
