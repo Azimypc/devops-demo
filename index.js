@@ -4,7 +4,7 @@ const app = express();
 const PORT = 3000;
 
 app.get("/", (req, res) => {
-  res.send(" DevOps Pamirsoftware IT Solutions Mohammad. DovOps 2026🚀");
+  res.send(" DevOps Pamirsoftware IT Solutions V.01🚀");
   
   
 });
