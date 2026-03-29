@@ -3,7 +3,8 @@ version: "3.9"
 services:
   app:
     image: azimypc/devops-demo:latest   
-    container_name: devops-demo-app      
+    container_name: devops-demo    
     ports:
       - "3000:3000"                      
-    restart: unless-stopped              
+    restart: unless-stopped
+    pull_policy: always              
