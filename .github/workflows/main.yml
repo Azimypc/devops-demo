@@ -17,6 +17,13 @@ jobs:
         with:
           node-version: '18'
 
+      # ← این قسمت اضافه شده
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
       - name: Install dependencies
         run: npm install
 
@@ -25,13 +32,6 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t azimypc/devops-demo:latest .
-
-      # ← این قسمت اضافه شده
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker image
         run: docker push azimypc/devops-demo:latest
